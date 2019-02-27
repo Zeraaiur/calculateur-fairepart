@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  slug: MyString
+  nom: MyString
+  pliant: false
+  couleur: false
+  verso: false
+  format: MyString
+
+two:
+  type: 
+  slug: MyString
+  nom: MyString
+  pliant: false
+  couleur: false
+  verso: false
+  format: MyString
