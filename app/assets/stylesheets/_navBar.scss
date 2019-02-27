@@ -1,0 +1,25 @@
+#navBar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+#navBarlogo{
+  max-width:150px;
+  margin-left:-10px;
+}
+.navBarSub{
+  width:50%;
+  ul{
+    float:right;
+    list-style: none;
+    li{
+      display:inline;
+      padding-left:20px;
+      a{
+        color:$dblue;
+        text-decoration:none;
+        font-family: 'Open Sans', sans-serif;
+      }
+    }
+  }
+}

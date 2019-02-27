@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import "color.scss";
+@import "appBar.scss";
+@import "navBar.scss";
+@import "banner.scss";
+#mainWrapper{
+  margin: -8px;
+}
+#mainContainer{
+  background-color:red;
+  margin: 0px 5%;
+}

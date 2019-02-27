@@ -1,0 +1,22 @@
+#appBar{
+  background-color:$dblue;
+
+  padding:8px 5% 28px 5%;
+  height:100%;
+  a{
+    color:white;
+    text-decoration:none;
+    font-family: 'Open Sans', sans-serif;
+    &:hover{
+      color:$lblue;
+      -webkit-transition: color 0.5s;
+      transition: color 0.5s;
+    }
+  }
+  :first-child{
+    float:left;
+  }
+  :last-child{
+    float:right;
+  }
+}
