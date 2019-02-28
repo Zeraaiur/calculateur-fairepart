@@ -1,0 +1,224 @@
+
+      <!-- SECTION ETAPE 1 FAIRE PART -->
+
+      <%= form_tag root_path, method: :get, remote: :true, id: "form" do %>
+
+      <div class="section-name">
+        <h2>ÉTAPE 1 : FAIRE-PART</h2>
+        <p>format standard 5 x 7 po (orientation verticale ou horizontale)</p>
+      </div>
+
+      <div class="section-choice">
+
+        <div class="choix-nombre">
+          <div class="choix-top">
+            <h2>Nombre de faire-part</h2>
+          </div>
+          <div class="choix-bottom">
+           <%= number_field_tag 'mynombrefp', @mynombrefp, min: 25, max:500, class: "nombre-input form-control", onchange: "numberFieldValidate(event)" %>
+         </div>
+       </div>
+
+       <div class="choix-env">
+        <div class="choix-top">
+          <h2>Besoin d'enveloppes</h2>
+        </div>
+        <div class="choix-bottom">
+          <div class="btn " id="btn1" onclick="selectTag(event, this.id)"><%= "Oui, SVP!" %><%= check_box_tag "clicked_enveloppe_fp[value]", true %></div>
+        </div>
+      </div>
+
+      <div class="choix-char">
+        <div class="choix-top">
+          <h2>Type de faire-part</h2>
+        </div>
+        <div class="choix-bottom">
+
+
+
+
+          <% @faireparts.each do |fairepart| %>
+          <div class="card">
+            <div class="card-top">
+              <%= cl_image_tag(fairepart.slug, :id => fairepart.slug, :alt =>fairepart.nom) %>
+            </div>
+            <div class="card-footer">
+
+              <% if fairepart.couleur == true %>
+              <p>Impression couleur</p>
+              <% else %>
+              <p>Impression noir et blanc</p>
+              <% end %>
+
+              <% if fairepart.verso == true %>
+              <p>Recto-verso</p>
+              <% else %>
+              <p>Recto seulement</p>
+              <% end %>
+              <p><b>
+
+
+
+                <%= @mynombrefp %> unités :
+
+
+
+              </b></p>
+            </div>
+          </div>
+          <% end  %>
+
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- SECTION ETAPE 2 CARTE REPONSES -->
+
+    <div class="section-name">
+      <h2>ÉTAPE 2 : CARTES-RÉPONSES</h2>
+      <p>format standard 4 x 5.5 po (orientation verticale ou horizontale)</p>
+    </div>
+
+    <div class="section-choice">
+
+      <div class="choix-nombre">
+        <div class="choix-top">
+          <h2>Nombre de cartes-réponses</h2>
+        </div>
+        <div class="choix-bottom">
+         <%= number_field_tag 'nombre-reponses', 25, min: 0, max:500, class: "nombre-input form-control", onchange: "numberFieldValidate(event)" %>
+       </div>
+     </div>
+
+     <div class="choix-env">
+      <div class="choix-top">
+        <h2>Besoin d'enveloppes</h2>
+      </div>
+      <div class="choix-bottom">
+        <div class="btn " id="btn2" onclick="selectTag(event, this.id)"><%= "Oui, SVP!" %><%= check_box_tag "clicked_enveloppe_rep[value]", true %></div>
+      </div>
+    </div>
+
+
+    <div class="choix-char">
+      <div class="choix-top">
+        <h2>Type de cartes-réponses</h2>
+      </div>
+      <div class="choix-bottom">
+
+        <% @reponses.each do |reponse| %>
+        <div class="card">
+          <div class="card-top">
+            <%= cl_image_tag(reponse.slug, :id => reponse.slug, :alt =>reponse.nom) %>
+          </div>
+          <div class="card-footer">
+
+            <% if reponse.couleur == true %>
+            <p>Impression couleur</p>
+            <% else %>
+            <p>Impression noir et blanc</p>
+            <% end %>
+
+            <% if reponse.verso == true %>
+            <p>Recto-verso</p>
+            <% else %>
+            <p>Recto seulement</p>
+            <% end %>
+            <p><b>35.35 $ pour 25 unités</b></p>
+          </div>
+        </div>
+        <% end  %>
+
+      </div>
+    </div>
+
+
+  </div>
+
+  <!-- SECTION ETAPE 3 INVITATION SOIRÉE -->
+
+  <div class="section-name">
+    <h2>ÉTAPE 3 : INVITATIONS POUR LA SOIRÉE SEULEMENT</h2>
+    <p>format standard 5 x 7 po (orientation verticale ou horizontale)</p>
+  </div>
+
+  <div class="section-choice">
+
+    <div class="choix-nombre">
+      <div class="choix-top">
+        <h2>Nombre d'invitations pour la soirée</h2>
+      </div>
+      <div class="choix-bottom">
+       <%= number_field_tag 'nombre-invitations', 0, min: 0, max:500, class: "nombre-input form-control", onchange: "numberFieldValidate(event)" %>
+     </div>
+   </div>
+
+   <div class="choix-env">
+    <div class="choix-top">
+      <h2>Besoin d'enveloppes</h2>
+    </div>
+    <div class="choix-bottom">
+
+    </div>
+  </div>
+
+
+  <div class="choix-char">
+    <div class="choix-top">
+      <h2>Type d'invitations pour la soirée</h2>
+    </div>
+    <div class="choix-bottom">
+      <h2>25</h2>
+    </div>
+  </div>
+
+
+</div>
+
+
+<!-- SECTION ETAPE 3 INVITATION SOIRÉE -->
+
+<div class="section-name">
+  <h2>ÉTAPE 4 : MENUS DE TABLE</h2>
+  <p>format standard 8 x 3.66 po (orientation verticale)</p>
+</div>
+
+<div class="section-choice">
+
+  <div class="choix-char">
+    <div class="choix-top">
+      <h2>Nombre de menus</h2>
+    </div>
+    <div class="choix-bottom">
+     <%= number_field_tag 'nombre-menus', 0, min: 0, max:500, class: "nombre-input form-control", onchange: "numberFieldValidate(event)" %>
+   </div>
+ </div>
+
+
+ <div class="choix-char">
+  <div class="choix-top">
+    <h2>Type de menus</h2>
+  </div>
+  <div class="choix-bottom">
+    <h2>25</h2>
+  </div>
+</div>
+
+
+</div>
+
+<%= submit_tag "filter", id: "filter-fairepart", style:"display:none"%>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
