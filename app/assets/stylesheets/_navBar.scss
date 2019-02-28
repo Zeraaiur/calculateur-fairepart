@@ -4,6 +4,7 @@
   align-items:center;
 }
 #navBarlogo{
+  padding-top:10px;
   max-width:150px;
   margin-left:-10px;
 }
@@ -19,6 +20,11 @@
         color:$dblue;
         text-decoration:none;
         font-family: 'Open Sans', sans-serif;
+        &:hover{
+          color:$lblue;
+          -webkit-transition: color 0.5s;
+          transition: color 0.5s;
+        }
       }
     }
   }
