@@ -1,0 +1,52 @@
+.section-name{
+  margin-top:10px;
+  background-color:$dblue;
+  text-align:center;
+  color:white;
+  font-family: 'Open Sans', sans-serif;
+  padding:5px;
+  h2{
+    font-size:1em;
+    margin:0px;
+  }
+  p{
+    font-weight:lighter;
+    margin:0px;
+    font-size:0.8em;
+  }
+}
+
+.section-choice{
+  text-align:center;
+  border:1px solid $mgray;
+  h2{
+    margin:0px;
+    font-size:0.8em;
+    font-family: 'Open Sans', sans-serif;
+    padding:10px 0px;
+  }
+}
+.choix-nombre{
+  border-bottom:1px solid $mgray;
+  border-right:1px solid $mgray;
+  width:calc(50% - 1px);
+  float:left;
+}
+.choix-env{
+  border-bottom:1px solid $mgray;
+  width:calc(50% );
+  float:right;
+}
+.choix-char{
+  clear:both;
+}
+
+
+.choix-top{
+  background-color:$lgray;
+  height:50%;
+
+
+
+
+}

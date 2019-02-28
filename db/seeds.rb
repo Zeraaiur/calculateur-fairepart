@@ -12,7 +12,7 @@ Enveloppe.destroy_all
 # ====///produit///========
 
 produit = Produit.new(
-  typeproduit: "reponse",
+  typeproduit: "fairepart",
   slug: "pliant5x7couleur",
   nom: "cartes pliantes, 5 x 7, couleur",
   pliant:true,
